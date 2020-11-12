@@ -6,7 +6,7 @@ const Inscri = () => {
         <h4>Informations personnelles</h4>
         <span>Nom et Prènom</span> <input/><br/>
         <span>Numéro de téléphone</span> <input/><br/>
-         <span>Adresse E-mail</span> <input/><br/> 
+        <span>Adresse E-mail</span> <input/><br/> 
         <span>Mot de passe</span> <input/><br/>
         <h4>Adresse principale</h4>
         <span>Adresse</span> <input/><br/>
