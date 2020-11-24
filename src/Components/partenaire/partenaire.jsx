@@ -1,7 +1,8 @@
 import React from 'react';
+import './partenaire.css';
 const Partenaire = () => {
     return ( <div>
-        <p className="p2">
+       <div className="part1"> <p className="parag1">
         Nous vous mettons en relation avec les utilisateurs de Livraison HamHama !
 
 Vous êtes restaurateurs à Sfax et vous disposez d’un service de livraison de repas à domicile et au bureau ?<br/>
@@ -15,7 +16,7 @@ Pour une demande de rdv avec un conseiller partenarial, ou de plus amples inform
 -Téléphone au xxxxx (24h/24h et 7j/7j)<br/>
 -Email: xxxxxx<br/>
 -Courrier: xxxxx, xxxx
-        </p>
+        </p></div>
         <h5>Ou remplissez ce formulaire : </h5>
         <div className="block2">
         <span>Nom de votre restaurant</span> <input/> <br/>

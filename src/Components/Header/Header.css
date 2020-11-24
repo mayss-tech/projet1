@@ -1,0 +1,64 @@
+.bar{
+    display: flex;
+    align-items: center;
+    width:100%;
+    height: 12%;
+    position: absolute;
+    background-color: rgba(5, 4, 4, 0.87);
+    top:0;
+    color:#B98E47;
+    position:fixed;
+}
+.bar>p{
+    cursor: pointer;
+    margin-left :1vw;
+}
+.logo{
+    height: 60vh;  
+    margin-top:-2vh; 
+    margin-left: -23vh;
+} 
+.fa-sort-down{
+    margin-left: 1vh;
+}
+.fa-comment-dots{
+    margin-right: 0.3vh;
+}
+.connection{
+    top:4vw;     
+    list-style: none;
+    display: none;
+    position: absolute;
+    background-color: rgba(5, 4, 4, 0.87);
+    max-width: 15vw;
+    height: 20vw;
+}
+.p2{
+    cursor: pointer;
+    list-style: none;
+    font-size: 15px;
+}
+.p2:hover .connection{
+    display: block;
+}
+.login{
+    margin-top:2vh;
+}
+.span1{ outline: none; border-radius: 1px; -webkit-border-radius: 1px; -moz-border-radius: 1px; -ms-border-radius: 1px; -o-border-radius: 1px;
+}
+.btn1{
+    background-color: #C29638;
+    outline: none;
+    border-radius: 0.3vw;
+    margin-left:3.3vw;
+    margin-top:2vh ;
+    margin-bottom:2vh ;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    
+}
+.fa-sort-down:hover .connection{
+    display: block;
+}
