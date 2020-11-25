@@ -110,11 +110,15 @@ h4{
 }
 /*REsto List*/
 .restoList{
+ 
   display: flex;
   justify-content: space-around;
   max-width: 60vw;
   border: solid rgb(163, 129, 16) 2px;
   margin-bottom:0.5vh ;
+}
+.part1{
+  margin-top:10%;
 }
 .imgResto{
   height: 16vh;

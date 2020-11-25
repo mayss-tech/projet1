@@ -1,9 +1,9 @@
 import React, { useEffect} from 'react';
-import {fetchRestaurantBeginAsync} from '../JS/actions/actionRestaurant';
+import {fetchRestaurantBeginAsync,searchRestaurant} from '../JS/actions/actionRestaurant';
 import { useDispatch, useSelector } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-
-const RestoList = () => {
+const RestoList = (props) => {
     const dispatch = useDispatch();
     const restaurants= useSelector((state) => state.restoReducer.restaurants);
     const loading = useSelector((state) => state.restoReducer.loading);
@@ -12,39 +12,26 @@ const RestoList = () => {
     dispatch(fetchRestaurantBeginAsync())
         
     }, []);
-    return loading ? (
+    const Search = ()=>{
+        searchRestaurant()
+    }
+    return  loading ? ( 
         <img src="https://www.mid-day.com/Resources/midday/images/loader.gif" style={{width:'100%',height:'100vh'}}alt="gif"/>
     ) :error? ( <h1 style={{marginTop:'15%', marginLeft:'40%'}}>404 Not Found </h1>
-    ) : (
-        <div>
-        {
-            restaurants.map(el=><div key={el.id}>
-                <img src={el.image} alt="image"/>
+    ) : ( 
+        <div className="part1">
+        <div style={{marginTop:'18%'}}><input 
+        type="text"
+        placeholder="Chercher votre restaurant"
+        onChange={(e)=>{Search(e.target.value)}}/></div>
+        {       restaurants.map(el=><div className="restoList" key={el.id}>
+                <img className="imgResto" src={el.image} alt="image"/>
+                <div style={{display:"block"}} >
                 <h4>{el.name}</h4>
-                <p>{el.desc}</p>
+                <p>{el.desc}</p></div>
+                <button className="btn1" onClick={()=>props.history.push("/menu/menuList"+el.name)} >Voir menu</button>
             </div>)
         }
         </div>
-    );
-    // const [keyWords,setkeyWords]=useState("")
-    // const Search=(x)=>{
-    //     setkeyWords(x)
-    // }
-    // return ( <div>
-        {/* <div><input 
-        type="text"
-        placeholder="Chercher votre restaurant"
-        onChange={(e)=>Search(e.target.value)}/></div> */}
-    {/* <div>{list.filter(el=>el.name.toUpperCase().includes(keyWords.toUpperCase())).map(el=><div className="restoList" key={el.id}>
-    <img className="imgResto" src={el.url} alt="url"></img>
-    <div style={{display:"block"}}>
-    <h4>{el.name}</h4>
-    <p>{el.description} </p></div>
-    <p>{el.rate} </p>
-    <button className="btn4" onClick={()=>props.history.push("/menuList/"+el.id)}>Voir menu</button>
-    </div>) }</div> */}
-{/*  
-    </div> 
-); */}
-} 
-export default RestoList;
+    )};
+export default withRouter (RestoList);

@@ -1,8 +1,12 @@
 import {FETCH_RESTAURANT_BEGIN,
     FETCH_RESTAURANT_SUCCESS,
-    FETCH_RESTAURANT_FAILURE} from '../constants/action-typeRestaurant';
+    FETCH_RESTAURANT_FAILURE, 
+
+    SEARCH_RESTAURANT
+    } from '../constants/action-typeRestaurant';
 
 const initialState = {
+    text:'',
     restaurants: [],
     loading: false,
     error: null
@@ -25,7 +29,13 @@ const restoReducer = (state = initialState, { type, payload }) => {
             ...state,
             loading:false,
             error:payload
-        };    
+        };
+    case SEARCH_RESTAURANT:
+        return {
+            ...state,
+            loading:false,
+            text:payload
+        }   
         default:
         return state;
     }

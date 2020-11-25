@@ -8,6 +8,7 @@ import Partenaire from './Components/partenaire/partenaire';
 import RestoList from './Components/Restaurant/RestoList';
 import NavBar from './Components/Header/NavBar';
 import Register from './Components/Inscription/inscription';
+import MenuList from './Components/Restaurant/MenuList';
 
 
 export const App=()=>{
@@ -18,7 +19,8 @@ export const App=()=>{
       <Route exact path='/inscription' component={(props)=> <Register  {...props} />}/>
       <Route exact path='/contact' component={(props)=> <Contact   {...props} />}/>
       <Route exact path='/partenaire' component={(props)=> <Partenaire  {...props} />}/>
-      <Route exact path='/restaurant/restoList' component={()=>  <RestoList />}/>
+      <Route exact path='/restaurant/restoList' component={(props)=>  <RestoList {...props}  />}/>
+      <Route exact path='/menu/menuList' component={(props)=>  <MenuList {...props} />}/>
     </BrowserRouter> );
 }
 export default App;

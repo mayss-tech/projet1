@@ -2,7 +2,9 @@ import axios from 'axios';
 import { 
     FETCH_RESTAURANT_BEGIN,
     FETCH_RESTAURANT_SUCCESS,
-    FETCH_RESTAURANT_FAILURE} from '../constants/action-typeRestaurant';
+    FETCH_RESTAURANT_FAILURE,
+    SEARCH_RESTAURANT,
+    } from '../constants/action-typeRestaurant';
 
 export const fetchRestaurantBeginAsync = () => async (dispatch) => {
     dispatch({
@@ -19,8 +21,14 @@ export const fetchRestaurantBeginAsync = () => async (dispatch) => {
             type: FETCH_RESTAURANT_FAILURE,
             payload: error.response,
         });
-}
-}
+}};
+
+export const searchRestaurant = (text)=>dispatch=>{
+        dispatch({
+            type:SEARCH_RESTAURANT,
+            payload:text
+            });}
+
 
 
 

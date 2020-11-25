@@ -33,7 +33,7 @@ const Register = () => {
       };
     return ( <div className="block1" >
     {loading? (<img src="https://www.mid-day.com/Resources/midday/images/loader.gif" style={{width:'100%',height:'100vh'}}alt="gif"/>)
-    : user? (<Redirect to='/restoList'/>):(
+    : user? (<Redirect to='/restaurant/restoList'/>):(
     <div className="inscri">
         <p className="p1"> Prenez quelques minutes pour vous inscrire</p>
         <h4>Informations personnelles</h4>
